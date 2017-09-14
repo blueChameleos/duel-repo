@@ -15,3 +15,4 @@ public class CharacterB implements Dueler
 		
 	}
 }
+//a
