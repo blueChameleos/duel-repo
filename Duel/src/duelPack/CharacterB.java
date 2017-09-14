@@ -10,8 +10,13 @@ public class CharacterB implements Dueler
 	{
 		
 	}
-	public String getName
+	public String getName()
 	{
 		
 	}
+	public static void setStartingHP(int hp)
+	{
+		
+	}
+	public int getHP();
 }
