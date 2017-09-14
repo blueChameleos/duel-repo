@@ -6,10 +6,10 @@ public class CharacterA implements Dueler{
 		
 	}
 	
-	void taunt();
-	String getName();
-	void getStartingHP(int hp);
-	int getHP();
+	public void taunt();
+	public String getName();
+	public void getStartingHP(int hp);
+	public int getHP();
 	
 }
 
