@@ -1,6 +1,7 @@
 package duelPack;
 
-public interface Dueler {
+public interface Dueler 
+{
 
 	
 	//print a taunt
