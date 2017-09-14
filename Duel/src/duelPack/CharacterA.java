@@ -1,6 +1,8 @@
 package duelPack;
 
 public class CharacterA implements Dueler{
+	private String Name;
+	private int HP;
 	
 	public CharacterA() {
 		
@@ -8,22 +10,27 @@ public class CharacterA implements Dueler{
 	
 	public void taunt()
 	{
-		
+		String[] taunts = {"Come on!", "Here I come!"};
+		double rand = Math.random()*taunts.length;
+		System.out.println(taunts[rand]);
 	}
 	
 	public String getName()
 	{
-		
+		Name = "Fox";
+		System.out.println(Name);
+		return Name;
 	}
 	
 	public void getStartingHP(int hp)
 	{
-		
+		HP = hp;
 	}
 	
 	public int getHP()
 	{
-		
+		System.out.println(HP);
+		return HP;
 	}
 	
 }
