@@ -1,8 +1,5 @@
 package duelPack;
 
-import duel.Dueler;
-
-//period 9
 
 public interface Dueler {
 

@@ -1,24 +1,25 @@
 package duelPack;
 
 public class CharacterA implements Dueler{
+	
 	private String Name;
 	private int HP;
 	
-	public CharacterA() {
-		
+	public CharacterA() 
+	{
+		this.Name = "Fox";
+		this.HP = 300;
 	}
 	
 	public void taunt()
 	{
 		String[] taunts = {"Come on!", "Here I come!"};
 		double rand = Math.random()*taunts.length;
-		System.out.println(taunts[rand]);
+		//System.out.println(taunts[rand]);
 	}
 	
 	public String getName()
 	{
-		Name = "Fox";
-		System.out.println(Name);
 		return Name;
 	}
 	
@@ -32,6 +33,8 @@ public class CharacterA implements Dueler{
 		System.out.println(HP);
 		return HP;
 	}
+	
+	
 	
 }
 
