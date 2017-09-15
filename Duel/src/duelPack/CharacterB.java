@@ -26,4 +26,8 @@ public class CharacterB implements Dueler
 	{ 
 		return hp;
 	}
+	public void getAction()
+	{
+		
+	}
 }
