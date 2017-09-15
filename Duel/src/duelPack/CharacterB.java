@@ -22,11 +22,12 @@ public class CharacterB implements Dueler
 	}
 	public void setStartingHP(int hp)
 	{
-		System.out.println(hp);
+		HP = hp;
 	}
 	public int getHP();
 	{ 
-		return hp;
+		System.out.println(HP);
+		return HP;
 	}
 	public void getAction()
 	{
