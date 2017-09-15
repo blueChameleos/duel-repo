@@ -2,10 +2,13 @@ package duelPack;
 
 public class CharacterB implements Dueler
 {
-	public CharacterB()
+	private String name;
+	private int HP;
+	
+	public CharacterB(String name, int HP)
 	{
-		private String name;
-		private int hp;
+		this.name = "Ur mom";
+		this.HP = 100;
 	}
 	public void taunt() 
 	{
@@ -15,7 +18,6 @@ public class CharacterB implements Dueler
 	}
 	public String getName()
 	{
-		String name = "ur mom";
 		return name;
 	}
 	public void setStartingHP(int hp)
