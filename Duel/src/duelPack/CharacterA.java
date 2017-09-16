@@ -3,20 +3,26 @@ package duelPack;
 public class CharacterA implements Dueler{
 	
 	private String Name;
-	private int HP;
 	private int currentHP;
 	String[] taunts = {"Come on!","Fox flips his gun", "Here I come!"};
 	
 	public CharacterA() 
 	{
 		this.Name = "Fox";
-		this.HP = 300;
 	}
 	
 	public void taunt()
-	{;
+	{
 		int rand = (int)(Math.random()*taunts.length);
-		System.out.println(taunts[rand]);
+		
+		if(rand != 1)
+		{	
+			System.out.println("Fox says, '" + taunts[rand] + "'");
+		}
+		else 
+		{
+			System.out.println(taunts[rand]);
+		}
 	}
 	
 	public String getName()
@@ -31,23 +37,37 @@ public class CharacterA implements Dueler{
 	
 	public int getHP()
 	{
-		System.out.println(HP);
-		return HP;
+		System.out.println(currentHP);
+		return currentHP;
 	}
 	
 	public int getAction(Object caller)
-	{
-		return -1;
+	{	
+		if(caller instanceof Duel)
+		{
+			int rand = (int)(Math.random()*3);
+			return rand;
+		}
+		
+		return 3;
 	}
 	
 	public void hit(Object caller) 
 	{
-		
+		if(caller instanceof Duel)
+		{
+			this.currentHP -= 10;
+		}
 	}
 	
 	public boolean determineIfOpponentIsFair(Dueler d, int hp)
 	{
-		return false;
+		if(d.getHP() != hp)
+		{
+			return false;
+		}
+		
+		return true;
 	}
 	
 }
