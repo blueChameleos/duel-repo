@@ -4,6 +4,8 @@ public class CharacterA implements Dueler{
 	
 	private String Name;
 	private int HP;
+	private int currentHP;
+	String[] taunts = {"Come on!","Fox flips his gun", "Here I come!"};
 	
 	public CharacterA() 
 	{
@@ -12,10 +14,9 @@ public class CharacterA implements Dueler{
 	}
 	
 	public void taunt()
-	{
-		String[] taunts = {"Come on!", "Here I come!"};
-		double rand = Math.random()*taunts.length;
-		//System.out.println(taunts[rand]);
+	{;
+		int rand = (int)(Math.random()*taunts.length);
+		System.out.println(taunts[rand]);
 	}
 	
 	public String getName()
@@ -23,9 +24,9 @@ public class CharacterA implements Dueler{
 		return Name;
 	}
 	
-	public void getStartingHP(int hp)
+	public void setStartingHP(int hp)
 	{
-		HP = hp;
+		currentHP = hp;
 	}
 	
 	public int getHP()
@@ -34,7 +35,20 @@ public class CharacterA implements Dueler{
 		return HP;
 	}
 	
+	public int getAction(Object caller)
+	{
+		return -1;
+	}
 	
+	public void hit(Object caller) 
+	{
+		
+	}
+	
+	public boolean determineIfOpponentIsFair(Dueler d, int hp)
+	{
+		return false;
+	}
 	
 }
 
