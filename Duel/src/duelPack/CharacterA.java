@@ -4,7 +4,7 @@ public class CharacterA implements Dueler{
 	
 	private String Name;
 	private int currentHP;
-	String[] taunts = {"Come on!","Fox flips his gun", "Here I come!"};
+	String[] taunts = {"Come on!","Fox starts multishining, because he is the superior character", "Here I come!"};
 	
 	public CharacterA() 
 	{
@@ -37,12 +37,18 @@ public class CharacterA implements Dueler{
 	
 	public int getHP()
 	{
-		System.out.println(currentHP);
+		//System.out.println(currentHP);
 		return currentHP;
 	}
 	
 	public int getAction(Object caller)
 	{	
+		int rand0 = (int)(Math.random()*10);
+				
+		if(rand0 < 10)
+		{
+			Curaga();
+		}
 		if(caller instanceof Duel)
 		{
 			int rand = (int)(Math.random()*3);
@@ -50,6 +56,12 @@ public class CharacterA implements Dueler{
 		}
 		
 		return 3;
+	}
+	
+	public void Curaga()
+	{
+		//yes kingdom hearts is amazing
+		currentHP = 100;
 	}
 	
 	public void hit(Object caller) 
