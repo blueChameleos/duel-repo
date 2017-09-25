@@ -4,37 +4,42 @@ public class CharacterB implements Dueler
 {
 	private String name;
 	private int currentHP;
-	String[] taunt = {"lol u suck, get better nerd, ur garbage"};
+	String[] taunts = {"lol u suck", "get better nerd", "ur garbage"};
 	
 	public CharacterB()
 	{
-		this.name = "Marth";
+		this.name = "Falco";
 	}
+	
 	public void taunt()
 	{
-		int randomTaunt = (int)(Math.random()*taunts.length);
+		int randTaunt = (int)(Math.random()*taunts.length);
 		
-		if(randomTaunt != 1)
+		if(randTaunt != 1)
 		{	
-			System.out.println("Marth, the better character says, '" + taunts[randomTaunt] + "'");
+			System.out.println("Falco says, '" + taunts[randTaunt] + "'");
 		}
 		else 
 		{
-			System.out.println(taunts[randomTaunt]);
+			System.out.println(taunts[randTaunt]);
 		}
 	}
+	
 	public String getName()
 	{
 		return name;
 	}
+	
 	public void setStartingHP(int hp)
 	{
 		currentHP = hp;
 	}
+	
 	public int getHP()
 	{
 		return currentHP;
 	}
+	
 	public int getAction(Object caller)
 	{	
 		if(caller instanceof Duel)
