@@ -11,7 +11,6 @@ public class CharacterA implements Dueler{
 	public CharacterA() 
 	{
 		this.Name = "Fox";
-		this.isLoaded = false;
 	}
 	
 	public void taunt()
@@ -36,6 +35,7 @@ public class CharacterA implements Dueler{
 	public void setStartingHP(int hp)
 	{
 		currentHP = hp;
+		isLoaded = false;
 	}
 	
 	public int getHP()
@@ -76,7 +76,7 @@ public class CharacterA implements Dueler{
 				}
 				else 
 				{
-					shoot();
+					return shoot();
 				}
 			}
 		}
@@ -100,12 +100,21 @@ public class CharacterA implements Dueler{
 	
 	public int shoot()
 	{
-		if(isLoaded) {
+		if(isLoaded == true) 
+		{
 			isLoaded = false;
 			return 1;
 		}
-		else {
-			return (int)(Math.random()*2);
+		else 
+		{
+			int action = (int)(Math.random()*2);
+			
+			if(action == 0)
+			{
+				return action;
+			}
+			
+			return 2;
 		}
 	}
 	
