@@ -12,15 +12,15 @@ public class CharacterB implements Dueler
 	}
 	public void taunt()
 	{
-		int randTaunt = (int)(Math.random()*taunts.length);
+		int randomTaunt = (int)(Math.random()*taunts.length);
 		
-		if(randTaunt != 1)
+		if(randomTaunt != 1)
 		{	
-			System.out.println("Marth, the better character says, '" + taunts[rand] + "'");
+			System.out.println("Marth, the better character says, '" + taunts[randomTaunt] + "'");
 		}
 		else 
 		{
-			System.out.println(taunts[randTaunt]);
+			System.out.println(taunts[randomTaunt]);
 		}
 	}
 	public String getName()
