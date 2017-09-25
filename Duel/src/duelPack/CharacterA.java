@@ -4,13 +4,14 @@ public class CharacterA implements Dueler{
 	
 	private String Name;
 	private int currentHP;
-	private boolean isLoaded = false;
+	private boolean isLoaded;
 	
 	String[] taunts = {"Come on!","Fox starts multishining, because he is the superior character", "Here I come!"};
 	
 	public CharacterA() 
 	{
 		this.Name = "Fox";
+		this.isLoaded = false;
 	}
 	
 	public void taunt()
@@ -51,16 +52,16 @@ public class CharacterA implements Dueler{
 		{
 			int rand = (int)(Math.random()*10);
 			
-			if(this.HP >= 30) 
+			if(this.currentHP >= 30) 
 			{
 				if(rand0 < 7)
 				{
 					return 2;
 				}
-				else if(this.HP < 20) 
+				else if(this.currentHP < 2) 
 				{
+					this.isLoaded = true;
 					return 0;
-					isLoaded = true;
 				}
 				else 
 				{
@@ -73,8 +74,10 @@ public class CharacterA implements Dueler{
 				if(rand0 <= 5) {
 					return 0;
 				}
-				else {
+				else 
+				{
 					shoot();
+				}
 			}
 		}
 		
@@ -85,7 +88,7 @@ public class CharacterA implements Dueler{
 	{
 		//yes kingdom hearts is amazing
 		currentHP = 100;
-	*/}
+	*/
 	
 	public void hit(Object caller) 
 	{
@@ -98,8 +101,8 @@ public class CharacterA implements Dueler{
 	public int shoot()
 	{
 		if(isLoaded) {
-			return 1;
 			isLoaded = false;
+			return 1;
 		}
 		else {
 			return (int)(Math.random()*2);
