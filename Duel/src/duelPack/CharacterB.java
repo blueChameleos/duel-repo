@@ -37,40 +37,33 @@ public class CharacterB implements Dueler
 	
 	public int getAction(Object caller)
 	{	
-		int rand0 = (int)(Math.random()*10);
-				
 		if(caller instanceof Duel)
 		{
-			
-			if(this.currentHP >= 30) 
+			if(!isLoaded)
 			{
-				if(rand0 <= 3)
+				if(Math.random() > .5)
+				{
+					isLoaded = true;
+					return 0;
+				}
+				else
 				{
 					return 2;
 				}
-				else if(rand0 >= 8) 
-				{
-					this.isLoaded = true;
-					return 0;
-				}
-				else 
-				{
-					return shoot();
-				}
 			}
-			
-			else 
+			else
 			{
-				if(rand0 <= 5) {
-					return 0;
-				}
-				else 
+				if(Math.random() > .5)
 				{
-					return shoot();
+					isLoaded = false;
+					return 1;
+				}
+				else
+				{
+					return 2;
 				}
 			}
 		}
-		
 		return 3;
 	}
 
@@ -83,25 +76,6 @@ public class CharacterB implements Dueler
 		}
 	}
 	
-	public int shoot()
-	{
-		if(isLoaded == true) 
-		{
-			isLoaded = false;
-			return 1;
-		}
-		else 
-		{
-			int action = (int)(Math.random()*2);
-			
-			if(action == 0)
-			{
-				return action;
-			}
-			
-			return 2;
-		}
-	}
 	
 	public boolean determineIfOpponentIsFair(Dueler d, int hp)
 	{
