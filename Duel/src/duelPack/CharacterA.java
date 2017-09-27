@@ -50,18 +50,11 @@ public class CharacterA implements Dueler{
 				
 		if(caller instanceof Duel)
 		{
-			int rand = (int)(Math.random()*10);
-			
 			if(this.currentHP >= 30) 
 			{
-				if(rand0 < 7)
+				if(rand0 < 1)
 				{
 					return 2;
-				}
-				else if(this.currentHP < 2) 
-				{
-					this.isLoaded = true;
-					return 0;
 				}
 				else 
 				{
@@ -111,6 +104,7 @@ public class CharacterA implements Dueler{
 			
 			if(action == 0)
 			{
+				isLoaded = true;
 				return action;
 			}
 			
