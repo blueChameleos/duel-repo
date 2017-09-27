@@ -39,9 +39,12 @@ public class CharacterB implements Dueler
 	{	
 		if(caller instanceof Duel)
 		{
+			
+			int random = (int)(Math.random()*10);
+			
 			if(!isLoaded)
 			{
-				if(Math.random() > .5)
+				if(random > 5)
 				{
 					isLoaded = true;
 					return 0;
@@ -53,7 +56,7 @@ public class CharacterB implements Dueler
 			}
 			else
 			{
-				if(Math.random() > .5)
+				if(random > 5)
 				{
 					isLoaded = false;
 					return 1;
@@ -64,7 +67,11 @@ public class CharacterB implements Dueler
 				}
 			}
 		}
+		
+		else
+		{
 		return 3;
+		}
 	}
 
 	
